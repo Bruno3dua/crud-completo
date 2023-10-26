@@ -27,11 +27,14 @@ export function Update() {
         try {
             const response = await api.put(`/produtos/${id}`, updatedData);
             console.log('Produto atualizado com sucesso');
+            setMsg('Produto atualizado com sucesso')
         } catch (error) {
             console.error('Erro ao atualizar o produto', error);
+            setMsg('Erro ao atualizar o produto')
         }
     }
 
+    const [msg, setMsg] = useState('Insira os dados para atualizar')
     const [nomeInput, setNome] = useState(nome)
     const [descricaoInput, setDescricao] = useState(descricao)
     const [precoInput, setPreco] = useState(preco)
@@ -51,6 +54,7 @@ export function Update() {
                     <Input label={'Preço:'} type='number' onChange={(e) => setPreco(e.target.value)} value={precoInput} />
                     <Input label={'Quantidade:'} type='number' onChange={(e) => setQuantidade(e.target.value)} value={quantidadeInput} />
                     <Button title={'Atualizar'} onClick={updateProduct} />
+                    <p>{msg}</p>
                 </FormWrapper>
 
             </Wrapper>

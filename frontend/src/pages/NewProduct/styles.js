@@ -8,6 +8,7 @@ export const Container = styled.div`
     justify-content: center;
 
     background-color: ${({ theme }) => theme.COLORS.BACKGROUND};
+
 `
 
 export const Wrapper = styled.div`
@@ -22,4 +23,8 @@ export const FormWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+
+    >p {
+        color: lightgray;
+    }
 `

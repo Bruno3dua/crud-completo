@@ -9,6 +9,7 @@ import React, { useState } from 'react'
 import { api } from '../../services/api'
 
 export function New() {
+    const [msg, setMsg] = useState('Insira os dados do produto')
     const [nome, setNome] = useState('')
     const [descricao, setDescricao] = useState('')
     const [preco, setPreco] = useState('')
@@ -25,6 +26,7 @@ export function New() {
             const response = await api.post('/New', data)
 
             console.log('Produto adicionado com sucesso:')
+            setMsg('Produto adicionado com sucesso')
 
             setNome('')
             setDescricao('')
@@ -32,6 +34,7 @@ export function New() {
             setQuantidade('')
         } catch (error) {
             console.error('Erro ao adicionar o produto:', error)
+            setMsg('Erro ao adicionar o produto')
         }
 
     }
@@ -50,6 +53,7 @@ export function New() {
                     <Input label={'Preço:'} type='number' onChange={(e) => setPreco(e.target.value)} value = {preco}/>
                     <Input label={'Quantidade:'} type='number' onChange={(e) => setQuantidade(e.target.value)} value = {quantidade}/>
                     <Button title={'Adicionar'} onClick={handleAddProduct} />
+                    <p>{msg}</p>
                 </FormWrapper>
 
             </Wrapper>
