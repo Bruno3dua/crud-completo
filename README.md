@@ -32,13 +32,3 @@ Para executar o servidor, siga as instruções abaixo:
 
 - Backend: Node.js, Express.js, MySQL.
 - Frontend: React JS.
-
-## Contribuindo
-
-Fique à vontade para contribuir para este projeto. Siga as diretrizes de contribuição no arquivo CONTRIBUTING.md para obter mais informações.
-
-## Licença
-
-Este projeto está sob a licença MIT. Consulte o arquivo LICENSE para obter mais detalhes.
-
-Agradecemos por sua contribuição para este projeto. Se tiver alguma dúvida ou sugestão, sinta-se à vontade para entrar em contato conosco.
